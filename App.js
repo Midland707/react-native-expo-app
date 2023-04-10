@@ -7,7 +7,6 @@ export default function App() {
     <View style={styles.container}>
       <ImageBackground
         source={require("./images/Photo_BG.jpg")}
-        resizeMode="cover"
         style={styles.imageBack}
       >
         <RegistrationScreen />
@@ -18,16 +17,15 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#ffffff",
+  },
   imageBack: {
     flex: 1,
-    justifyContent: "center",
-    alignSelf: "stretch", //width: 100%
-  },
-
-  container: {
-    flex: 2,
-    backgroundColor: "#fff",
+    resizeMode: "cover",
+    justifyContent: "flex-end",
     alignItems: "center",
-    justifyContent: "center",
+    // alignSelf: "stretch", //width: 100%
   },
 });

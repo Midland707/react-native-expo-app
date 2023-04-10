@@ -1,69 +1,70 @@
 import React from "react";
-import { StyleSheet, Image, Button, TextInput, View, Text } from "react-native";
-import { Formik } from "formik";
+import {
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  TextInput,
+  View,
+  Text,
+} from "react-native";
 
-const handleChange = (e) => {
-  e.target.reset;
-};
-const handleBlur = () => {};
-const handleSubmit = () => {};
+// const handleChange = (e) => {
+//   e.target.reset;
+// };
+// const handleBlur = () => {};
+// const handleSubmit = () => {};
 
 export const RegistrationScreen = (props) => (
-  <Formik
-    style={styles.form}
-    initialValues={{ username: "", email: "", password: "" }}
-    onSubmit={(values) => console.log("submitted", values)}
-  >
-    {({ handleChange, handleBlur, handleSubmit, values }) => (
-      <View>
-        <Image
-          style={styles.tinyLogo}
-          source={{
-            uri: "https://reactnative.dev/img/tiny_logo.png",
-          }}
-        />
-        <Text>Username</Text>
-        <TextInput
-          placeholder="Username"
-          style={styles.input}
-          value={values.username}
-          onBlur={handleBlur("username")}
-          onChangeText={handleChange("username")}
-        />
-        <Text>Email</Text>
-        <TextInput
-          placeholder="Email"
-          style={styles.input}
-          value={values.email}
-          onBlur={handleBlur("email")}
-          onChangeText={handleChange("email")}
-        />
-        <Text>Password</Text>
-        <TextInput
-          placeholder="Password"
-          style={styles.input}
-          value={values.password}
-          onBlur={handleBlur("password")}
-          onChangeText={handleChange("password")}
-          secureTextEntry={true}
-        />
-        <Button
-          onPress={handleSubmit}
-          style={styles.submitButn}
-          title="Submit"
-        />
-      </View>
-    )}
-  </Formik>
+  <View style={styles.form}>
+    <Image
+      style={styles.tinyLogo}
+      source={{
+        uri: "https://reactnative.dev/img/tiny_logo.png",
+      }}
+    />
+
+    <Text>Registration</Text>
+    <TextInput
+      placeholder="Username"
+      style={styles.input}
+      // onBlur={handleBlur("username")}
+      // onChangeText={handleChange("username")}
+    />
+    <TextInput
+      placeholder="Email"
+      style={styles.input}
+      // onBlur={handleBlur("email")}
+      // onChangeText={handleChange("email")}
+    />
+    <TextInput
+      placeholder="Password"
+      style={styles.input}
+      // onBlur={handleBlur("password")}
+      // onChangeText={handleChange("password")}
+      secureTextEntry={true}
+    />
+    <TouchableOpacity
+      // onPress={handleSubmit}
+      style={styles.submitBtn}
+    >
+      <Text>Sing in</Text>
+    </TouchableOpacity>
+  </View>
 );
 
 const styles = StyleSheet.create({
   form: {
-    flex: 3,
-    backgroundColor: "#fff",
-    borderColor: "black",
+    width: 375,
+    height: 550,
+    backgroundColor: "#FFFFFF",
     borderWidth: 1,
-    borderRadius: 10,
+    borderColor: "#F6F6F6",
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+
+    display: "flex",
+    justifyContent: "space-evenly",
+    // justifyContent: "center",
   },
 
   tinyLogo: {
@@ -72,22 +73,35 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    margin: 15,
-    width: 300,
     height: 50,
-    borderColor: "black",
+    marginHorizontal: 16,
     borderWidth: 1,
-  },
+    borderColor: "#E8E8E8",
+    borderRadius: 8,
 
-  submitButn: {
-    width: 156,
-    height: 19,
-
+    padding: 16,
+    color: "#BDBDBD",
     fontFamily: "Roboto",
-    // fontStyle: normal,
     fontWeight: 400,
     fontSize: 16,
     lineHeight: 19,
-    // textAlign: center,
+  },
+
+  submitBtn: {
+    width: 343,
+    height: 51,
+    backgroundColor: "#F6F6F6",
+    borderWidth: 1,
+    borderColor: "#E8E8E8",
+    borderRadius: 8,
+    justifyContent: "center",
+    alignItems: "center",
+
+    fontFamily: "Roboto",
+    fontWeight: 400,
+    fontSize: 16,
+    lineHeight: 19,
+
+    color: "red",
   },
 });
