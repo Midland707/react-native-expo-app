@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     padding: 16,
     color: "#BDBDBD",
     fontFamily: "Roboto",
-    fontWeight: 400,
+    // fontWeight: 400, //Android свариться на цей параметр
     fontSize: 16,
     lineHeight: 19,
   },
