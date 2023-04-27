@@ -61,9 +61,11 @@ const styles = StyleSheet.create({
     borderColor: "#F6F6F6",
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
+    padding: 30,
 
     display: "flex",
     justifyContent: "space-evenly",
+    alignItems: "center",
     // justifyContent: "center",
   },
 
@@ -74,6 +76,7 @@ const styles = StyleSheet.create({
 
   input: {
     height: 50,
+    width: 343,
     marginHorizontal: 16,
     borderWidth: 1,
     borderColor: "#E8E8E8",
